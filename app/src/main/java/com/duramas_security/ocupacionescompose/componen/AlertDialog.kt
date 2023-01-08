@@ -30,17 +30,17 @@ sealed class TiposDialog(
 @Composable
 fun AlertDialogprobando(
     tipoDialog: TiposDialog,
-    ocupacion: Ocupacion ,
+    ocupacion: Ocupacion,
     show: Boolean = false,
     onConfirm: () -> Unit,
     onDismiss: () -> Unit = {},
-    textDismiss : String = ""
+    textDismiss: String = ""
 ) {
     if (show) {
         AlertDialog(onDismissRequest = { /*TODO*/ },
             modifier = Modifier.fillMaxWidth(),
             confirmButton = {
-                TextButton(onClick ={onConfirm()}){
+                TextButton(onClick = { onConfirm() }) {
                     Text(text = "Ok", color = tipoDialog.color)
                 }
             },
@@ -66,7 +66,7 @@ fun AlertDialogprobando(
                         ocupacion.descripcion, modifier = Modifier
                             .fillMaxWidth()
                             .padding(5.dp),
-                        color = tipoDialog.coloTexto,
+                        color = Azul200,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
                     )
@@ -74,7 +74,7 @@ fun AlertDialogprobando(
                         ocupacion.fechaRegistro, modifier = Modifier
                             .fillMaxWidth()
                             .padding(5.dp),
-                        color = tipoDialog.coloTexto,
+                        color = Azul200,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
                     )
@@ -82,7 +82,7 @@ fun AlertDialogprobando(
                         ocupacion.Salario.toString(), modifier = Modifier
                             .fillMaxWidth()
                             .padding(5.dp),
-                        color = tipoDialog.coloTexto,
+                        color = Azul200,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
                     )
@@ -90,20 +90,4 @@ fun AlertDialogprobando(
             }
         )
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun hola() {
-    AlertDialogprobando(
-        TiposDialog.Informacion,
-        Ocupacion(
-            1,
-            "Programador",
-            "24/06/2022",
-            80000.0
-        ),
-        true,
-        {}
-    )
 }

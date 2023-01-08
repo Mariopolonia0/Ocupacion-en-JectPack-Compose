@@ -17,13 +17,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             NavHost(navController = navController,
-                startDestination = "guardarocupacion"
+                startDestination = "listaOcupacion"
             ) {
-                composable("guardarocupacion") {
-                    GuardarOcupacion(navController)
+                composable("guardarOcupacion") {
+                    GuardarOcupacion()
                 }
-                composable("lista") {
-                    ListaOcupacion()
+                composable("listaOcupacion") {
+                    ListaOcupacion(navController)
                 }
             }
         }

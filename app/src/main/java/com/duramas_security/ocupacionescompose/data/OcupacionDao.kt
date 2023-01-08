@@ -25,6 +25,7 @@ interface OcupacionDao {
         FROM Ocupaciones
         ORDER BY ocupacionId
     """)
+
     fun GetLista(): Flow<List<Ocupacion>>
 
 }
