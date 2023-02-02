@@ -5,10 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
@@ -36,7 +33,6 @@ fun ListaOcupacion(
     navController: NavHostController,
     viewModel: MainActivityViewModel = hiltViewModel()
 ) {
-    val scrollState = rememberScrollState()
     val lista = viewModel.listaOcupacion.collectAsState(initial = emptyList())
     Column(
         modifier = Modifier
